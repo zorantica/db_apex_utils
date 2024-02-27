@@ -1,12 +1,15 @@
 # Various Oracle Database and Oracle APEX utilities
-In this repository You may find various Oracle Database and Oracle APEX utilities:
+In this repository You may find various Oracle Database and Oracle APEX utilities
 
 - [Oracle APEX - DML Collections ](#oracle-apex-dml-collections)
+
+### History of changes:
+- 1.0 - created "Oracle APEX - DML Collections" utility
 
 ## Oracle APEX - DML Collections
 This utility provides You the functionality to execute DML operations directly on APEX collections from pure SQL. No need for using PL/SQL APEX_COLLECTION API. This may come handy in various scenarios like using Interactive Grid for data editing or manipulating temporary data.
 
-Installation script and examples script can be found in the folder "apex_dml_collections". Just create the package, view and trigger in the target schema and You're good to go.
+Installation and examples scripts with instructions can be found in the folder [apex_dml_collections](https://github.com/zorantica/db_apex_utils/tree/main/apex_dml_collections). But simply... just create the package, view and trigger in the target schema and You're ready to go.
 
 So, if You want for example to populate the APEX collection with data from DEMO_CUSTOMERS table, You may execute the following INSERT statement:
 
