@@ -1,4 +1,4 @@
-# Oracle APEX - DML Collections
+# Oracle APEX - DML on Collections
 
 History of changes:
 - 1.0 - initial version
