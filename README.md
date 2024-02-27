@@ -4,11 +4,11 @@ In this repository You may find various Oracle Database and Oracle APEX utilitie
 - Oracle APEX Collections DML
 
 ## Oracle APEX Collections DML
-This utility provides You the functionality to execute DML operations directly on APEX collections from pure SQL. No need for using PL/SQL APEX_COLLECTION API.
+This utility provides You the functionality to execute DML operations directly on APEX collections from pure SQL. No need for using PL/SQL APEX_COLLECTION API. This may come handy in various scenarios like using Interactive Grid for data editing or manipulating temporary data.
 
 Installation script and examples script can be found in the folder "apex_dml_collections". Just create the package, view and trigger in the target schema and You're good to go.
 
-So, for example, if You want to populate the APEX collection with data from DEMO_CUSTOMERS table, You may do it in the following way:
+So, for example, if You want to populate the APEX collection with data from DEMO_CUSTOMERS table, You may execute the following INSERT statement:
 
 ```sql
 INSERT INTO apex_collections_dml (
