@@ -61,4 +61,4 @@ AND collection_name = 'DEMO_CUSTOMERS'
 ;
 ```
 
-Co not forget to commit the changes :)
+Co not forget to commit the changes :blush:
