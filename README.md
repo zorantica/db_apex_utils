@@ -10,7 +10,7 @@ Installation script and examples script can be found in the folder "apex_dml_col
 
 With this utility You may, for example, to populate the APEX collection with data from DEMO_CUSTOMERS table in the following way:
 
-```
+```sql
 INSERT INTO apex_collections_dml (
     collection_name, 
     n001,  --customer_id 
@@ -51,7 +51,7 @@ FROM
 
 Or You may update the collection and change the credit limit for repeat customers by 10% like this:
 
-```
+```sql
 UPDATE apex_collections_dml
 SET 
     n002 = n002 + (10 * n002 / 100)
