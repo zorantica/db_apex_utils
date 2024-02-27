@@ -8,7 +8,7 @@ This utility provides You the functionality to execute DML operations directly o
 
 Installation script and examples script can be found in the folder "apex_dml_collections". Just create the package, view and trigger in the target schema and You're good to go.
 
-So, for example, if You want to populate the APEX collection with data from DEMO_CUSTOMERS table, You may execute the following INSERT statement:
+So, if You want for example to populate the APEX collection with data from DEMO_CUSTOMERS table, You may execute the following INSERT statement:
 
 ```sql
 INSERT INTO apex_collections_dml (
@@ -70,5 +70,7 @@ WHERE
 AND c006 = 'VA'
 ;
 ```
+
+No need for using PL/SQL blocks of code!
 
 Do not forget to commit the changes :blush:
