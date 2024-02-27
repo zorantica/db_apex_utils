@@ -6,9 +6,9 @@ In this repository You may find various Oracle Database and Oracle APEX utilitie
 ## Oracle APEX Collections DML
 This utility provides You the functionality to execute DML operations directly on APEX collections from pure SQL. No need for using PL/SQL APEX_COLLECTION API.
 
-Installation script and examples script can be found in the folder "apex_dml_collections".
+Installation script and examples script can be found in the folder "apex_dml_collections". Just create the package, view and trigger in the target schema and You're good to go.
 
-With this utility You may, for example, to populate the APEX collection with data from DEMO_CUSTOMERS table in the following way:
+So, for example, if You want to populate the APEX collection with data from DEMO_CUSTOMERS table, You may do it in the following way:
 
 ```sql
 INSERT INTO apex_collections_dml (
@@ -61,3 +61,4 @@ AND collection_name = 'DEMO_CUSTOMERS'
 ;
 ```
 
+Co not forget to commit the changes :)
