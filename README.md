@@ -61,4 +61,14 @@ AND collection_name = 'DEMO_CUSTOMERS'
 ;
 ```
 
+Or delete all customers from "VA" state:
+
+```sql
+DELETE apex_collections_dml
+WHERE 
+    collection_name = 'DEMO_CUSTOMERS'
+AND c006 = 'VA'
+;
+```
+
 Do not forget to commit the changes :blush:
