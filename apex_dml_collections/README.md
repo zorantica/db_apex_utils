@@ -17,4 +17,4 @@ The script works for the Oracle database version 12c or newer.
 
 ## Examples
 
-Examples can be found in the script [example.sql](https://github.com/zorantica/db_apex_utils/blob/main/apex_dml_collections/example.sql)
+Examples can be found in the script [examples.sql](https://github.com/zorantica/db_apex_utils/blob/main/apex_dml_collections/examples.sql)
