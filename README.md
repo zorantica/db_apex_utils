@@ -1,9 +1,9 @@
 # Various Oracle Database and Oracle APEX utilities
 In this repository You may find various Oracle Database and Oracle APEX utilities:
 
-- [Oracle APEX Collections DML](#oracle-apex-collections-dml)
+- [Oracle APEX Collections DML](#oracle-apex-dml-collections)
 
-## Oracle APEX Collections DML
+## Oracle APEX - DML Collections
 This utility provides You the functionality to execute DML operations directly on APEX collections from pure SQL. No need for using PL/SQL APEX_COLLECTION API. This may come handy in various scenarios like using Interactive Grid for data editing or manipulating temporary data.
 
 Installation script and examples script can be found in the folder "apex_dml_collections". Just create the package, view and trigger in the target schema and You're good to go.
@@ -70,7 +70,5 @@ WHERE
 AND c006 = 'VA'
 ;
 ```
-
-No need for using PL/SQL blocks of code!
 
 Do not forget to commit the changes :blush:
