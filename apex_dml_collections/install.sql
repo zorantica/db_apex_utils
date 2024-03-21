@@ -3,8 +3,8 @@ INSTALL INSTRUCTIONS
 
 In the target schema:
 - create package spec and package body (apex_collections_dml_pkg)
-- create view (apex_collections_dml)
-- create instead of trigger (apex_collections_dml_trg)
+- create view (APEX_COLLECTIONS_DML)
+- create instead of trigger (APEX_COLLECTIONS_DML_TRG)
 
 Actually, You can simply execute the following script
 */

@@ -2,9 +2,11 @@
 In this repository You may find various Oracle Database and Oracle APEX utilities
 
 - [Oracle APEX - DML on Collections ](#oracle-apex-dml-on-collections)
+- [Oracle APEX - apex_lang_utils package ](#oracle-apex-apex_lang_utils-package)
 
 ### History of changes:
 - 1.0 - created "Oracle APEX - DML On Collections" utility
+- 1.1 - created "apex_lang_utils" package
 
 ## Oracle APEX - DML on Collections
 This utility provides You the functionality to execute DML statements directly on APEX collections from pure SQL. No need for using PL/SQL APEX_COLLECTION API. This may come handy in various scenarios like using Interactive Grid for data editing or manipulating temporary data.
@@ -75,3 +77,13 @@ AND c006 = 'VA'
 ```
 
 Do not forget to commit the changes :blush:
+
+## Oracle APEX - apex_lang_utils package
+
+Compatible with the Oracle APEX vesrion 23.1 
+
+Package installation scripts can be found in the folder [apex_lang_utils](https://github.com/zorantica/db_apex_utils/tree/main/apex_lang_utils).
+
+The package contains following program units:
+- a function get_xliff_per_page to export multiple XLIFF files for selected pages 
+- a procedure apply_xliff_files to apply multiple XLIFF translation files stored in a single ZIP file
