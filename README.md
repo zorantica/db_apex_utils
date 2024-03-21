@@ -1,7 +1,7 @@
 # Various Oracle Database and Oracle APEX utilities
 In this repository You may find various Oracle Database and Oracle APEX utilities
 
-- [Oracle APEX - DML on Collections ](#oracle-apex-dml-on-collections)
+- [Oracle APEX - DML on Collections ](#oracle-apex---dml-on-collections)
 - [Oracle APEX - apex_lang_utils package ](#oracle-apex---apex_lang_utils-package)
 
 ### History of changes:
