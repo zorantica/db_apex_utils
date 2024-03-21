@@ -34,7 +34,7 @@ Parameters:
 
 ## Usage
 
-Export multiple XLIFF files in a single ZIP file:
+### Export multiple XLIFF files in a single ZIP file
 
 ```sql
 DECLARE
@@ -60,7 +60,7 @@ BEGIN
 END;
 ```
 
-Apply multiple XLIFF files from a single ZIP file:
+### Apply multiple XLIFF files from a single ZIP file
 
 ```sql
 DECLARE
