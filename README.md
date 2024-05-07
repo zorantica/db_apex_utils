@@ -91,6 +91,11 @@ The package contains following program units:
 - a procedure apply_xliff_files to apply multiple XLIFF translation files stored in a single ZIP file
 
 ## Oracle APEX - LOB 2 Script
+Compatible with the Oracle APEX vesrion 19.2 
+
+Package installation scripts can be found in the folder [lob_2_script](https://github.com/zorantica/db_apex_utils/tree/main/lob_2_script).
+Utility application can be found in the folder [application](https://github.com/zorantica/db_apex_utils/tree/main/application).
+
 The utility provides You functionality to create PL/SQL script from a binary file content (LOB).
 Produced script can be included in Your patches and executed on the target environment, storing the LOB content in the database table cell.
 It can be useful to move images, Word or Execl documents and other binary or large text files between various databases / environments.
