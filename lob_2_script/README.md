@@ -2,8 +2,7 @@
 
 The utility provides You functionality to create PL/SQL script from a binary file content (LOB).<br>
 Produced script can be included in Your patches and executed on the target environment, storing the LOB content in the database table cell.<br>
-It can be useful to move images, Word or Execl documents and other binary or large text files between various databases / environments.<br>
-I find it very useful when I need to include binary files in my patches such as APEX Office Print templates, PDF files or images, which content is going to be stored in the database tables. 
+I find this utility very useful when I need to include binary files in my patches such as APEX Office Print templates, PDF files or images, which content is going to be stored in the database tables. 
 
 ## History of changes:
 - 1.0 - initial version
