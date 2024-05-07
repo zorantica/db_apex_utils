@@ -10,7 +10,7 @@ We use it often to include APEX Office Print Word templates in patches.
 
 ## Install instructions
 - Create the package specification and the package body in the target schema.
-- Optionally import the APEX application in Your workspace for easier usage of this utility (APEX 19.2 or newer).
+- Optionally import the [APEX application](https://github.com/zorantica/db_apex_utils/tree/main/application) in Your workspace for easier usage of this utility (APEX 19.2 or newer).
 
 ## Usage
 
