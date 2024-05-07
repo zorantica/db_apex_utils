@@ -3,10 +3,12 @@ In this repository You may find various Oracle Database and Oracle APEX utilitie
 
 - [Oracle APEX - DML on Collections ](#oracle-apex---dml-on-collections)
 - [Oracle APEX - apex_lang_utils package ](#oracle-apex---apex_lang_utils-package)
+- [Oracle APEX - Lob 2 Script ](#oracle-apex---lob-2-script)
 
 ### History of changes:
 - 1.0 - created "Oracle APEX - DML On Collections" utility
 - 1.1 - created "apex_lang_utils" package
+- 1.1 - created "Lob 2 Script" utility
 
 ## Oracle APEX - DML on Collections
 This utility provides You the functionality to execute DML statements directly on APEX collections from pure SQL. No need for using PL/SQL APEX_COLLECTION API. This may come handy in various scenarios like using Interactive Grid for data editing or manipulating temporary data.
@@ -87,3 +89,9 @@ Package installation scripts can be found in the folder [apex_lang_utils](https:
 The package contains following program units:
 - a function get_xliff_per_page to export multiple XLIFF files for selected pages 
 - a procedure apply_xliff_files to apply multiple XLIFF translation files stored in a single ZIP file
+
+## Oracle APEX - LOB 2 Script
+The utility provides You functionality to create PL/SQL script from a binary file content (LOB).
+Produced script can be included in Your patches and executed on the target environment, storing the LOB content in the database table cell.
+It can be useful to move images, Word or Execl documents and other binary or large text files between various databases / environments.
+We use it often to include [APEX Office Print](#https://www.apexofficeprint.com/index.html) Word templates in patches. 
