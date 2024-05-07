@@ -1,6 +1,6 @@
 CREATE OR REPLACE PACKAGE lob_2_script IS
 
---utility program units
+--UTILITY PROGRAM UNITS
 FUNCTION f_clob_to_blob(
     c clob,
     plEncoding IN NUMBER default 0
@@ -13,6 +13,8 @@ FUNCTION f_lob_type (
     p_column varchar2
 ) RETURN varchar2;
 
+
+--MAIN PROGRAM UNITS
 
 /*
 Function returns a CLOB value containg a SQL script, 
@@ -27,6 +29,23 @@ Parameters:
 @ p_file - a blob content, if the p_lob_source is "PARAM"
 
 @return - CLOB value containg a SQL script
+
+
+Usage:
+DECLARE
+    l_script clob;
+
+BEGIN
+    l_script := 
+        lob_2_script.f_generate_script (
+            p_table => 'ZORANDBA.TEST',
+            p_column => 'BLOB_DOC',
+            p_column_type => 'B',
+            p_where => 'ID = 1',
+            p_lob_source => 'TABLE'
+        );
+
+END;
 */
 FUNCTION f_generate_script(
     p_table varchar2,
