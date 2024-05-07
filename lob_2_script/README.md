@@ -1,8 +1,8 @@
 # "Lob 2 Script" utility
 
-The utility provides You functionality to create PL/SQL script from a binary file content (LOB).
-Produced script can be included in Your patches and executed on the target environment, storing the LOB content in the database table cell.
-It can be useful to move images, Word or Execl documents and other binary or large text files between various databases / environments.
+The utility provides You functionality to create PL/SQL script from a binary file content (LOB).<br>
+Produced script can be included in Your patches and executed on the target environment, storing the LOB content in the database table cell.<br>
+It can be useful to move images, Word or Execl documents and other binary or large text files between various databases / environments.<br>
 We use it often to include APEX Office Print Word templates in patches. 
 
 ## History of changes:
@@ -15,10 +15,10 @@ We use it often to include APEX Office Print Word templates in patches.
 ## Usage
 
 ### From APEX UI:
-First select a file source (upload a file or read a file content from the table).
-If You selected an "Upload file" option then You should to upload a file manually in the item named "File". You may use a drag and drop approach or click on the item and browse.
-If You selected a "Read a file content from the table" then the file content is going to be read automatically from the selected table, selected column and where condition entered in items below. Those 3 values should determine exactly one cell in the table containing LOB value.
-Then enter a target table, column and where condition to percisely determine the file destination... a single cell in the table where the LOB content is going to be stored on the target environment.
+First select a file source (upload a file or read a file content from the table).<br>
+If You selected an "Upload file" option then You should to upload a file manually in the item named "File". You may use a drag and drop approach or click on the item and browse.<br>
+If You selected a "Read a file content from the table" then the file content is going to be read automatically from the selected table, selected column and where condition entered in items below. Those 3 values should determine exactly one cell in the table containing LOB value.<br>
+Then enter a target table, column and where condition to percisely determine the file destination... a single cell in the table where the LOB content is going to be stored on the target environment.<br>
 Then click on a Create Script button... and that's it. The document is going to be downloaded in Your browser.
 
 <img src="screens/screen.png" alt="screen"/>
