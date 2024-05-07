@@ -33,7 +33,7 @@ The generated PL/SQL script looks like this:
 
 
 ### From PL/SQL script
-```SQL
+```sql
 DECLARE
     l_script clob;
 
