@@ -4,6 +4,7 @@ In this repository You may find various Oracle Database and Oracle APEX utilitie
 - [Oracle APEX - DML on Collections ](#oracle-apex---dml-on-collections)
 - [Oracle APEX - apex_lang_utils package ](#oracle-apex---apex_lang_utils-package)
 - [Oracle APEX - Lob 2 Script ](#oracle-apex---lob-2-script)
+- [Oracle APEX - apex_zip_utils package ](#oracle-apex---apex_zip_utils-package)
 
 ### History of changes:
 - 1.0 - created "Oracle APEX - DML On Collections" utility
