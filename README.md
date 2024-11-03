@@ -8,7 +8,8 @@ In this repository You may find various Oracle Database and Oracle APEX utilitie
 ### History of changes:
 - 1.0 - created "Oracle APEX - DML On Collections" utility
 - 1.1 - created "apex_lang_utils" package
-- 1.1 - created "Lob 2 Script" utility
+- 1.2 - created "Lob 2 Script" utility
+- 1.3 - created "apex_zip_utils" utility
 
 ## Oracle APEX - DML on Collections
 This utility provides You the functionality to execute DML statements directly on APEX collections from pure SQL. No need for using PL/SQL APEX_COLLECTION API. This may come handy in various scenarios like using Interactive Grid for data editing or manipulating temporary data.
@@ -101,3 +102,12 @@ The utility provides You functionality to create PL/SQL script from a binary fil
 Produced script can be included in Your patches and executed on the target environment, storing the LOB content in the database table cell.<br>
 It can be useful to move images, Word or Execl documents and other binary or large text files between various databases / environments.<br>
 We use it often to include [APEX Office Print](#https://www.apexofficeprint.com/index.html) Word templates in patches.
+
+## Oracle APEX - apex_zip_utils package
+
+Package installation scripts can be found in the folder [apex_zip_utils](https://github.com/zorantica/db_apex_utils/tree/main/apex_zip_utils).
+
+The package contains following program units:
+- a function unzip_pl to extract files and return them as a SQL dataset
+- a function unzip to extract files and return them as a nested table collection
+- a function unzip_ar to extract files and return them as a associative array collection
