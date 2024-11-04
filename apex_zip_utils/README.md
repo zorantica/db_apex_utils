@@ -35,16 +35,17 @@ FROM
     )
 ;
 
+```text
 Result:
-FILE_NAME                   FILE_NAME_AND_DIRECTORY             FILE_SIZE   FILE_CONTENT
-00000000000000130429.jpeg	00000000000000130429.jpeg	        11900       (blob)
-00000000000000130430.jpeg	00000000000000130430.jpeg	        9340        (blob)
-00000000000000130431.jpeg	00000000000000130431.jpeg	        17634       (blob)
-ajax-loading.gif            ajax-loading.gif                    72232       (blob)
-apexrnd-555x311.png	        apexrnd-555x311.png	                31480       (blob)
-test.txt                    test.txt                            4           (blob)
-00000000000000130407.jpeg   tiles/00000000000000130407.jpeg     9270        (blob)
-00000000000000130408.jpeg   tiles/00000000000000130408.jpeg     11206       (blob)
+FILE_NAME                    FILE_NAME_AND_DIRECTORY            FILE_SIZE   FILE_CONTENT
+00000000000000130429.jpeg    00000000000000130429.jpeg          11900       (blob)
+00000000000000130430.jpeg    00000000000000130430.jpeg          9340        (blob)
+00000000000000130431.jpeg    00000000000000130431.jpeg          17634       (blob)
+ajax-loading.gif             ajax-loading.gif                   72232       (blob)
+apexrnd-555x311.png	      apexrnd-555x311.png	            31480       (blob)
+test.txt                     test.txt                           4           (blob)
+00000000000000130407.jpeg    tiles/00000000000000130407.jpeg    9270        (blob)
+00000000000000130408.jpeg    tiles/00000000000000130408.jpeg    11206       (blob)
 ```
 
 
