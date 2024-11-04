@@ -23,7 +23,7 @@ Parameters:
 - p_exclude - a separated string containing file and directory name criterias to exclude from a result set, like "tiles/*"; separator is defined in a parameter p_separator (default value ":")
 - p_separator - include and exclude string separator
  
-Code example (without any include/exclude filters):
+#### Code example (without any include/exclude filters):
 
 ```sql
 SELECT *
@@ -43,15 +43,16 @@ FILE_NAME                    FILE_NAME_AND_DIRECTORY            FILE_SIZE   FILE
 00000000000000130430.jpeg    00000000000000130430.jpeg          9340        (blob)
 00000000000000130431.jpeg    00000000000000130431.jpeg          17634       (blob)
 ajax-loading.gif             ajax-loading.gif                   72232       (blob)
-apexrnd-555x311.png	      apexrnd-555x311.png	            31480       (blob)
+apexrnd-555x311.png          apexrnd-555x311.png                31480       (blob)
 test.txt                     test.txt                           4           (blob)
 00000000000000130407.jpeg    tiles/00000000000000130407.jpeg    9270        (blob)
 00000000000000130408.jpeg    tiles/00000000000000130408.jpeg    11206       (blob)
 ```
 
 
-Code example (with include filters):
+#### Code example (with include filters):
 
+```sql
 SELECT *
 FROM 
     table(
@@ -61,19 +62,22 @@ FROM
         )
     )
 ;
+```
 
+```text
 Result:
-FILE_NAME                   FILE_NAME_AND_DIRECTORY           FILE_SIZE   FILE_CONTENT
-00000000000000130429.jpeg	00000000000000130429.jpeg	        11900       (blob)
-00000000000000130430.jpeg	00000000000000130430.jpeg	        9340        (blob)
-00000000000000130431.jpeg	00000000000000130431.jpeg	        17634       (blob)
-ajax-loading.gif            ajax-loading.gif                    72232       (blob)
-00000000000000130407.jpeg   tiles/00000000000000130407.jpeg     9270        (blob)
-00000000000000130408.jpeg   tiles/00000000000000130408.jpeg     11206       (blob)
+FILE_NAME                    FILE_NAME_AND_DIRECTORY            FILE_SIZE   FILE_CONTENT
+00000000000000130429.jpeg    00000000000000130429.jpeg          11900       (blob)
+00000000000000130430.jpeg    00000000000000130430.jpeg          9340        (blob)
+00000000000000130431.jpeg    00000000000000130431.jpeg          17634       (blob)
+ajax-loading.gif             ajax-loading.gif                   72232       (blob)
+00000000000000130407.jpeg    tiles/00000000000000130407.jpeg    9270        (blob)
+00000000000000130408.jpeg    tiles/00000000000000130408.jpeg    11206       (blob)
+```
 
+#### Code example (with include filters and excluding a folder "tiles"):
 
-Code example (with include filters and excluding a folder "tiles"):
-
+```sql
 SELECT *
 FROM 
     table(
@@ -84,13 +88,16 @@ FROM
         )
     )
 ;
+```
 
+```text
 Result:
-FILE_NAME                   FILE_NAME_AND_DIRECTORY           FILE_SIZE   FILE_CONTENT
-00000000000000130429.jpeg	00000000000000130429.jpeg	        11900       (blob)
-00000000000000130430.jpeg	00000000000000130430.jpeg	        9340        (blob)
-00000000000000130431.jpeg	00000000000000130431.jpeg	        17634       (blob)
-ajax-loading.gif            ajax-loading.gif                    72232       (blob)
+FILE_NAME                    FILE_NAME_AND_DIRECTORY            FILE_SIZE   FILE_CONTENT
+00000000000000130429.jpeg    00000000000000130429.jpeg          11900       (blob)
+00000000000000130430.jpeg    00000000000000130430.jpeg          9340        (blob)
+00000000000000130431.jpeg    00000000000000130431.jpeg          17634       (blob)
+ajax-loading.gif             ajax-loading.gif                   72232       (blob)
+```
 
 
 ### Procedure apply_xliff_files
