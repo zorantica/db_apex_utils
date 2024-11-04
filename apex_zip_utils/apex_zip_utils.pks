@@ -30,7 +30,7 @@ Code example (without any include/exclude filters):
 SELECT *
 FROM 
     table(
-        apex_zip_utils.unzip_pl (
+        apex_zip_utils.unzip (
             p_zipped_blob => (SELECT blob_content FROM import_zip WHERE id = 1)
         )
     )
@@ -53,7 +53,7 @@ Code example (with include filters):
 SELECT *
 FROM 
     table(
-        apex_zip_utils.unzip_pl (
+        apex_zip_utils.unzip (
             p_zipped_blob => (SELECT blob_content FROM import_zip WHERE id = 1),
             p_include => '*.gif:*.jpeg'
         )
@@ -76,7 +76,7 @@ Code example (with include filters and excluding a folder "tiles"):
 SELECT *
 FROM 
     table(
-        apex_zip_utils.unzip_pl (
+        apex_zip_utils.unzip (
             p_zipped_blob => (SELECT blob_content FROM import_zip WHERE id = 1),
             p_include => '*.gif:*.jpeg',
             p_exclude => 'tiles/*'
@@ -94,7 +94,7 @@ ajax-loading.gif            ajax-loading.gif                    72232       (blo
 */
 
 
-FUNCTION unzip_pl (
+FUNCTION unzip (
     p_zipped_blob blob,
     p_include varchar2 default null,
     p_exclude varchar2 default null,
@@ -123,7 +123,7 @@ BEGIN
     FROM import_zip 
     WHERE id = 1;
 
-    l_files := apex_zip_utils.unzip (
+    l_files := apex_zip_utils.unzip_nt (
         p_zipped_blob => l_zipped_blob
     );
     
@@ -134,7 +134,7 @@ BEGIN
 END;
 */
 
-FUNCTION unzip (
+FUNCTION unzip_nt (
     p_zipped_blob blob,
     p_include varchar2 default null,
     p_exclude varchar2 default null,

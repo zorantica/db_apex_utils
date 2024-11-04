@@ -1,7 +1,7 @@
 CREATE OR REPLACE PACKAGE BODY apex_zip_utils AS
 
 
-FUNCTION unzip_pl (
+FUNCTION unzip (
     p_zipped_blob IN blob,
     p_include varchar2 default null,
     p_exclude varchar2 default null,
@@ -84,10 +84,10 @@ BEGIN
     END LOOP;    
 
     RETURN;
-END unzip_pl;
+END unzip;
 
 
-FUNCTION unzip (
+FUNCTION unzip_nt (
     p_zipped_blob blob,
     p_include varchar2 default null,
     p_exclude varchar2 default null,
@@ -101,7 +101,7 @@ BEGIN
     BULK COLLECT INTO l_output
     FROM
         table(
-            apex_zip_utils.unzip_pl (
+            apex_zip_utils.unzip (
                 p_zipped_blob => p_zipped_blob,
                 p_include => p_include,
                 p_exclude => p_exclude,
@@ -112,7 +112,7 @@ BEGIN
     
     RETURN l_output;
     
-END unzip;
+END unzip_nt;
 
 
 
@@ -131,7 +131,7 @@ BEGIN
     BULK COLLECT INTO l_output_nt
     FROM
         table(
-            apex_zip_utils.unzip_pl (
+            apex_zip_utils.unzip (
                 p_zipped_blob => p_zipped_blob,
                 p_include => p_include,
                 p_exclude => p_exclude,
