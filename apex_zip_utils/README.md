@@ -19,8 +19,8 @@ The pipelined function unzips all files from the passed ZIP file and returns a d
 
 Parameters:
 - p_zipped_blob - a blob value containing a ZIP file
-- p_include - a separated string containing file and directory name criterias to include in a result set, like "*.jpg" or "tile*.gif"; separator is defined in a parameter p_separator (default value ":")
-- p_exclude - a separated string containing file and directory name criterias to exclude from a result set, like "tiles/*"; separator is defined in a parameter p_separator (default value ":")
+- p_include - a separated string containing file and directory name criterias to include in a result set, like "**.jpg" or "tile**.gif"; separator is defined in a parameter p_separator (default value ":")
+- p_exclude - a separated string containing file and directory name criterias to exclude from a result set, like "tiles/**"; separator is defined in a parameter p_separator (default value ":")
 - p_separator - include and exclude string separator
  
 #### Code example (without any include/exclude filters):
