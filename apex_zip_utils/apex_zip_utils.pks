@@ -10,6 +10,9 @@ TYPE r_file IS RECORD (
 TYPE t_files IS TABLE OF r_file;
 TYPE t_files_ar IS TABLE OF r_file INDEX BY varchar2(32000);
 
+--copied from wwv_flow_api package
+c_apex_21_2 constant number := 20211015;
+
 
 /*
 The pipelined function unzips all files from the passed ZIP file and returns a dataset with list of unziped files containing:

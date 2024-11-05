@@ -9,7 +9,7 @@ Create the package specification and the package body in the target database sch
 
 ## Program unit specs
 
-### Function unzip
+### Function unzip (pipelined)
 
 The pipelined function unzips all files from the passed ZIP file and returns a dataset with list of unziped files containing:
 - file name
