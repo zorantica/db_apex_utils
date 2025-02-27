@@ -29,4 +29,4 @@ I adapted his script for database dictionary views.
 
 To generate the documentation download the script and run it from SQLPlus.
 
-The result is a HTML file containing descriptions and details for all database dictionary views. An example can be found [here](dba_docs.html)here.
+The result is a HTML file containing descriptions and details for all database dictionary views. An example can be found [here](dba_docs.html).
