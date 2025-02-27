@@ -21,7 +21,7 @@ Read more on my blog post:
 
 ### Documentation Generatior
 
-Big thanks goes to Connor and his blog post
+Big thanks goes to [Connor McDonald](https://connor-mcdonald.com/) and his blog post
 
 [https://connor-mcdonald.com/2025/02/26/the-apex-data-dictionary/?unapproved=29590&moderation-hash=b30c9e18937ecb67f6a458b7b0413d4a#respond](https://connor-mcdonald.com/2025/02/26/the-apex-data-dictionary/?unapproved=29590&moderation-hash=b30c9e18937ecb67f6a458b7b0413d4a#respond)
 
