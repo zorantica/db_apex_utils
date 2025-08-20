@@ -1,14 +1,15 @@
 CREATE OR REPLACE PACKAGE apex_zip_utils AS
 
 TYPE r_file IS RECORD (
-    file_name varchar2(32000),
-    file_name_and_directory varchar2(32000),
+    zip_file_name varchar2(1000),
+    file_name varchar2(1000),
+    file_name_and_directory varchar2(4000),
     file_size number,
     file_content blob
 );
 
 TYPE t_files IS TABLE OF r_file;
-TYPE t_files_ar IS TABLE OF r_file INDEX BY varchar2(32000);
+TYPE t_files_ar IS TABLE OF r_file INDEX BY varchar2(4000);
 
 --copied from wwv_flow_api package
 c_apex_21_2 constant number := 20211015;
@@ -99,6 +100,7 @@ ajax-loading.gif            ajax-loading.gif                    72232       (blo
 
 FUNCTION unzip (
     p_zipped_blob blob,
+    p_zip_filename IN varchar2,
     p_include varchar2 default null,
     p_exclude varchar2 default null,
     p_separator varchar2 default ':'
@@ -139,6 +141,7 @@ END;
 
 FUNCTION unzip_nt (
     p_zipped_blob blob,
+    p_zip_filename IN varchar2,
     p_include varchar2 default null,
     p_exclude varchar2 default null,
     p_separator varchar2 default ':' 
@@ -184,6 +187,7 @@ END;
 
 FUNCTION unzip_ar (
     p_zipped_blob blob,
+    p_zip_filename IN varchar2,
     p_include varchar2 default null,
     p_exclude varchar2 default null,
     p_separator varchar2 default ':' 

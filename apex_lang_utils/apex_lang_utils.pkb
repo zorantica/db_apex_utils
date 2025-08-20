@@ -1,6 +1,29 @@
 CREATE OR REPLACE PACKAGE BODY apex_lang_utils AS
 
 
+PROCEDURE p_download_document(
+    p_doc IN OUT blob,
+    p_file_name varchar2,
+    p_disposition varchar2 default 'attachment'  --values "attachment" and "inline"
+    ) IS
+BEGIN
+    htp.init;
+    OWA_UTIL.MIME_HEADER('application/pdf', FALSE);
+    htp.p('Content-length: ' || dbms_lob.getlength(p_doc) ); 
+    htp.p('Content-Disposition: ' || p_disposition || '; filename="' || p_file_name || '"' );
+    OWA_UTIL.HTTP_HEADER_CLOSE;
+    
+    WPG_DOCLOAD.DOWNLOAD_FILE(p_doc);
+
+    --free temporary lob IF it is temporary
+    if dbms_lob.istemporary(p_doc) = 1 then
+        DBMS_LOB.FREETEMPORARY(p_doc);
+    end if;
+    
+    apex_application.stop_apex_engine;
+END p_download_document;  
+
+
 
 PROCEDURE create_session_if_needed (
     p_app_id number
@@ -99,7 +122,7 @@ BEGIN
         apex_zip.add_file (
             p_zipped_blob => l_zip,
             p_file_name => l_data(t).filename,
-            p_content => ape_utils.f_clob_to_blob(l_xliff)
+            p_content => apex_util.clob_to_blob(l_xliff)
         );
         
     END LOOP;
@@ -237,6 +260,73 @@ BEGIN
 
 
 END apply_xliff_files;
+
+
+PROCEDURE p_export_from_apex (
+    p_app_id number,
+    p_folder_per_group_yn varchar2 default 'Y',
+    p_only_modified_elements_yn varchar2 default 'N'
+) IS
+
+    l_languages varchar2(4000);
+    l_pages varchar2(4000);
+    l_zip blob;
+
+BEGIN
+    SELECT listagg(column_value, ',') as languages
+    INTO l_languages
+    FROM table( apex_application.g_f01);
+
+    SELECT listagg(column_value, ',') as pages
+    INTO l_pages
+    FROM table( apex_application.g_f02);
+
+    l_zip := apex_lang_utils.get_xliff_per_page (
+        p_app_id => p_app_id,
+        p_pages => l_pages,
+        p_languages => l_languages,
+        p_folder_per_group_yn => p_folder_per_group_yn,
+        p_only_modified_elements_yn => p_only_modified_elements_yn
+    );
+
+    p_download_document (
+        p_doc => l_zip,
+        p_file_name => 'translations for app ' || p_app_id || '.zip'
+    );
+END p_export_from_apex;
+
+
+PROCEDURE p_import (
+    p_app_id number,
+    p_seed_yn varchar2 default 'Y',
+    p_publish_yn varchar2 default 'Y'
+) IS
+
+    CURSOR c_files IS 
+        SELECT *
+        FROM apex_application_temp_files;
+
+BEGIN
+    FOR t IN c_files LOOP
+
+        zt_log.p_zabelezi_komentar('FILENAME: ' || t.filename);
+        zt_log.p_zabelezi_komentar('Size: ' || dbms_lob.getLength(t.blob_content) );
+
+        apex_lang_utils.apply_xliff_files (
+            p_zip => t.blob_content,
+            p_app_id => p_app_id,
+            p_seed_yn => p_seed_yn,
+            p_publish_yn => p_publish_yn
+        );
+        
+    END LOOP;
+    
+EXCEPTION WHEN others THEN
+
+    zt_log.p_zabelezi_komentar(sqlerrm || ' ' || dbms_utility.format_error_backtrace);
+    RAISE;
+
+END p_import;
 
 
 END apex_lang_utils;

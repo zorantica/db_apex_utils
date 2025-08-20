@@ -3,6 +3,7 @@ CREATE OR REPLACE PACKAGE BODY apex_zip_utils AS
 
 FUNCTION unzip (
     p_zipped_blob IN blob,
+    p_zip_filename IN varchar2,
     p_include varchar2 default null,
     p_exclude varchar2 default null,
     p_separator varchar2 default ':'
@@ -42,6 +43,8 @@ BEGIN
 
     --unzipping files and populating the output collection
     l_index := l_files.first;
+    
+    l_row.zip_file_name := p_zip_filename;
     
     LOOP
         EXIT WHEN l_index is null;
@@ -139,6 +142,7 @@ END unzip;
 
 FUNCTION unzip_nt (
     p_zipped_blob blob,
+    p_zip_filename IN varchar2,
     p_include varchar2 default null,
     p_exclude varchar2 default null,
     p_separator varchar2 default ':'
@@ -153,6 +157,7 @@ BEGIN
         table(
             apex_zip_utils.unzip (
                 p_zipped_blob => p_zipped_blob,
+                p_zip_filename => p_zip_filename,
                 p_include => p_include,
                 p_exclude => p_exclude,
                 p_separator => p_separator
@@ -168,6 +173,7 @@ END unzip_nt;
 
 FUNCTION unzip_ar (
     p_zipped_blob blob,
+    p_zip_filename IN varchar2,
     p_include varchar2 default null,
     p_exclude varchar2 default null,
     p_separator varchar2 default ':' 
@@ -183,6 +189,7 @@ BEGIN
         table(
             apex_zip_utils.unzip (
                 p_zipped_blob => p_zipped_blob,
+                p_zip_filename => p_zip_filename,
                 p_include => p_include,
                 p_exclude => p_exclude,
                 p_separator => p_separator

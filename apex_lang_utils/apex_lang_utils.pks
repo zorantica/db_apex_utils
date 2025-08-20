@@ -1,5 +1,13 @@
 CREATE OR REPLACE PACKAGE apex_lang_utils AS
 
+
+PROCEDURE p_download_document(
+    p_doc IN OUT blob,
+    p_file_name varchar2,
+    p_disposition varchar2 default 'attachment'  --values "attachment" and "inline"
+);
+
+
 /*
 Function returns a ZIP file with exported XLIFF files for selected pages and selected languages.
 Compatible with APEX 23.1 or newer.
@@ -54,6 +62,19 @@ Parameters:
 
 PROCEDURE apply_xliff_files (
     p_zip blob,
+    p_app_id number,
+    p_seed_yn varchar2 default 'Y',
+    p_publish_yn varchar2 default 'Y'
+);
+
+
+PROCEDURE p_export_from_apex (
+    p_app_id number,
+    p_folder_per_group_yn varchar2 default 'Y',
+    p_only_modified_elements_yn varchar2 default 'N'
+);
+
+PROCEDURE p_import (
     p_app_id number,
     p_seed_yn varchar2 default 'Y',
     p_publish_yn varchar2 default 'Y'
