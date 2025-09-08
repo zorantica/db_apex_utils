@@ -72,9 +72,9 @@ Connect to the schema where You installed a wrap PL/SQL package and execute the 
 
 Open the bash script file with Your preffered text editor.
 
-At the beginning of the script (line 4) enter a correct name of the file containing a list of files to wrap. The default one is wrap_list.txt just like the one You downloaded and populated.
+At the beginning of the script (line 4) enter a correct name of the file containing a list of files to wrap. *The default one is wrap_list.txt just like the one You downloaded and populated.*
 
-Line 3 contains an URL of the ORDS service created in the previous chapter. If You have Oracle APEX or SQL Developer Web available You may quickly find the URL, like this:
+Line 3 contains an URL of the ORDS service created in the previous chapter. *If You have Oracle APEX or SQL Developer Web available You may quickly find the URL.*
 
 Otherwise the following SELECT statement helps:
 
@@ -88,7 +88,7 @@ JOIN   user_ords_templates t ON t.module_id = m.id
 JOIN   user_ords_handlers  h ON h.template_id = t.id;
 ```
 
-Optionally adapt the wrapped file name pattern in the line 23. Currently wrapped files contain the same filename as the original non-wrapped source file plus WRP extension.
+Optionally adapt the wrapped file name pattern in the line 23. By default, wrapped files contain the same filename as the original non-wrapped source files plus WRP extension.
 
 ## Usage
 
