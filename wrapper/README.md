@@ -42,7 +42,7 @@ But You may download and install either [CygWin](http://cygwin.com/install.html)
 
 ### Download Bash Script
 
-Download [a bash script file](https://github.com/zorantica/db_apex_utils/blob/main/wrapper/wrap_packages.sh) and store it oo Your local computer.
+Download [a bash script file](https://github.com/zorantica/db_apex_utils/blob/main/wrapper/wrap_packages.sh) and store it on Your local computer.
 
 *I prefer to store it in the folder with PL/SQL source files or in the parent folder.*
 
