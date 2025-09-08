@@ -1,6 +1,6 @@
 # "Wrapper" utility
 
-The Wrapper utility provides You functionality to wrap PL/SQL code stored in Your local files, for example in a versioning control repository (GIT, SVN...).
+The Wrapper utility provides You functionality to wrap PL/SQL code stored in Your local files (for example in a versioning control repository like GIT or SVN) in case that You do not have Oracle command line wrap utility available.
 
 ## History of changes
 
@@ -10,17 +10,17 @@ The Wrapper utility provides You functionality to wrap PL/SQL code stored in You
 
 The code is actually wrapped inside the database by using methods from DBMS_DDL package.
 
-But to fetch and send a content of files to the database, in order to be wrapped, it requires 3 building blocks:
+To fetch and send a content of files to the database in order to be wrapped, it requires 3 building blocks:
 
 - local bash script file
 - ORDS REST Service module
 - database package
 
-First, the local bash script stored on Your computer is fetching a content of local files conatining a PL/SQL code.
+First, the local bash script stored on Your computer is fetching a content of local files conatining PL/SQL code.
 
-Second, a content of local files is sent to the ORDS REST service via POST request by using a standard CURL utility.
+Second, a content of local files is sent to the ORDS REST service via POST request by using a well known CURL utility.
 
-ORDS module is then calling a database PL/SQL function and it passes a content of files received in the request. The function wraps a code and returns wrapped code to the ORDS module, which passes it back as a response to the bash script.
+ORDS module is then calling a database PL/SQL function and passes a content of file received in the request. The function wraps a code and returns wrapped code to the ORDS module, which passes it back as a response to the bash script.
 
 Bash script is then storing a recieved wrapped content in the separate local file so that the original PL/SQL code is not overwritten.
 
