@@ -42,21 +42,21 @@ But You may download and install either [CygWin](http://cygwin.com/install.html)
 
 ### Download Bash Script
 
-Download [a bash script file](https://www.github.com) and store it oo Your local computer.
+Download [a bash script file](https://github.com/zorantica/db_apex_utils/blob/main/wrapper/wrap_packages.sh) and store it oo Your local computer.
 
 *I prefer to store it in the folder with PL/SQL source files or in the parent folder.*
 
 ### Prepare A list of Files to wrap
 
-Download [an example TXT file](https://www.github.com) named wrap_list.txt.
+Download [an example TXT file](https://github.com/zorantica/db_apex_utils/blob/main/wrapper/wrap_list.txt) named wrap_list.txt.
 
 Store a file in the same folder as bash script.
 
 Populate TXT file with a list of files You want to wrap.
 
-### Create a Database PL/SQL Package for wrapping
+### Install a Database PL/SQL Package for wrapping
 
-Download [package specification and body](https://www.github.com).
+Download [package specification and body](https://github.com/zorantica/db_apex_utils/blob/main/wrapper/pkg_wrap.sql).
 
 Pick a desired database schema and install the downloaded package there (simply execute a downloaded script via Your preferred client tool like SQL Developer, SQLPlus, SQLCl...).
 
@@ -64,11 +64,9 @@ Pick a desired database schema and install the downloaded package there (simply 
 
 ### Create an ORDS Module
 
-Download [SQL script for creating an ORDS module](https://www.github.com).
+Download [SQL script for creating an ORDS module](https://github.com/zorantica/db_apex_utils/blob/main/wrapper/ORDS.sql).
 
-Connect to the schema where You installed a wrap PL/SQL package and execute the script.
-
-This way You'll enable the schema for ORDS and create an ORDS module for wrapping.
+Connect to the schema where You installed a wrap PL/SQL package and execute the script. This way You'll enable the schema for ORDS and create an ORDS module for wrapping.
 
 ### Configure Bach Script File
 
