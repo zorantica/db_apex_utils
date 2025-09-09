@@ -1,24 +1,20 @@
 # "Wrapper" utility
 
-The Wrapper utility provides You functionality to wrap PL/SQL code stored in Your local files (for example in a versioning control repository like GIT or SVN) in case that You do not have Oracle command line wrap utility available.
-
-## History of changes
-
-- 1.0 - initial version
+The Wrapper utility provides You functionality to wrap PL/SQL code stored in Your local files (for example in a versioning control repository like GIT or SVN) in case that You do not have Oracle command line wrap utility available, which comes with a full database installation only.
 
 ## How the Utility works
 
-The code is actually wrapped inside the database by using methods from DBMS_DDL package.
+The PL/SQL code is fetched from local computer, sent to the database to be wrapped and the wrapped result is stored back on the local computer.
 
-To fetch and send a content of files to the database in order to be wrapped, it requires 3 building blocks:
+The whole process requires 3 building blocks:
 
-- local bash script file
-- ORDS REST Service module
-- database package
+1. local bash script file
+2. ORDS REST Service module
+3. database package containing a fuction for wrapping
 
-First, the local bash script stored on Your computer is fetching a content of local files conatining PL/SQL code.
+The local bash script stored on Your computer is fetching a content of local files conatining PL/SQL code.
 
-Second, a content of local files is sent to the ORDS REST service via POST request by using a well known CURL utility.
+A content of local files is sent one by one to the ORDS REST service via POST request by using a well known CURL utility.
 
 ORDS module is then calling a database PL/SQL function and passes a content of file received in the request. The function wraps a code and returns wrapped code to the ORDS module, which passes it back as a response to the bash script.
 
@@ -34,7 +30,7 @@ If You don't have one on Your computer please download and install it from here.
 
 ### SH Utility
 
-Windows does not natively supports an execution of sh files (script shell).
+Windows does not natively supports an execution of SH files (script shell).
 
 But You may download and install either [CygWin](http://cygwin.com/install.html) or Git for Windows (with bash enabled).
 
@@ -116,3 +112,7 @@ RESPONSE=$(curl -s -X POST "$WRAP_URL" \
     -H "Content-Type: text/plain" \
     --data-binary @"$INPUT_FILE")
 ```
+
+## History of changes
+
+- 1.0 - initial version
