@@ -95,3 +95,24 @@ Optionally adapt the wrapped file name pattern in the line 23. By default, wrapp
 Simply execute the Bash Script file and wait until it finishes.
 
 Every source file which is going to be wrapped is stated in prompt output so You may trace the progress.
+
+## Security
+
+Exposing unprotected ORDS modules can lead to security issues and it is recommended to protect modules at least with basic authentication or more secure mechanism like OAuth2.
+
+There is a lot of documentation on how to implement security in ORDS, for example the basic authentication:
+
+<https://blogs.oracle.com/cloud-infrastructure/post/ords-basic-authentication-with-oracle-apex>
+
+In that case You need to alter the SH bash script and adapt CURL calls to include additional parameters for authentication (lines 34-36). Like this:
+
+```sh
+#credentials
+USERNAME="your_username"
+PASSWORD="your_password"
+
+RESPONSE=$(curl -s -X POST "$WRAP_URL" \
+    -u "$USERNAME:$PASSWORD" \
+    -H "Content-Type: text/plain" \
+    --data-binary @"$INPUT_FILE")
+```
