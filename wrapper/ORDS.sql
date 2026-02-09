@@ -36,7 +36,7 @@ BEGIN
       p_comments       => NULL,
       p_source         => 
 'BEGIN
-    pkg_export_utils.p_decode_and_wrap (
+    pkg_wrap.p_decode_and_wrap (
         p_source => :body
     );
 END;');
