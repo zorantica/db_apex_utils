@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WRAP_URL="https://apex192.united-codes.com/ords/ape/ape/wrap"
+WRAP_URL="https://xepa.right-thing.solutions/ords/apex242/wrap/wrap/wrap"
 INPUT_LIST="wrap_list.txt"
 
 # Check if wrap_list.txt exists
@@ -12,21 +12,21 @@ fi
 # Process each line
 while IFS= read -r LINE || [ -n "$LINE" ]; do
   # Trim whitespace
-  BASE_NAME=$(echo "$LINE" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+  INPUT_FILE=$(echo "$LINE" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
   # Skip empty lines
-  if [ -z "$BASE_NAME" ]; then
-    continue
-  fi
+  [ -z "$INPUT_FILE" ] && continue
 
-  INPUT_FILE="${BASE_NAME}"
-  OUTPUT_FILE="${BASE_NAME}.wrp"
 
-  # Check if .pkb file exists
+  # Check input file exists
   if [ ! -f "$INPUT_FILE" ]; then
     echo "Input file '$INPUT_FILE' not found, skipping..."
     continue
   fi
+
+  # Output file: remove extension, add .pkw
+  BASE_NO_EXT="${INPUT_FILE%.*}"
+  OUTPUT_FILE="${INPUT_FILE%?}w"
 
   echo "Wrapping '$INPUT_FILE'..."
 
